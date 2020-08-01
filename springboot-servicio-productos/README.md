@@ -13,11 +13,7 @@ Se genera una estructura de paquetes y se crea uno el nombre con com.microservic
 ![Captura3](https://user-images.githubusercontent.com/41167366/89090826-f0e8bc80-d36a-11ea-9708-af0337f18226.PNG)
 
 Se crea la clase producto  y se agregan los siguientes atributos  
-  
-  private Long id;	
-	private String nombre;
-	private Double precio;
-	@Column(name="create-at")
+private Long id; private String nombre; private Double precio; @Column(name="create-at")
 ![Captura4](https://user-images.githubusercontent.com/41167366/89091108-8a649e00-d36c-11ea-9f33-c87251a7c6c9.PNG)
 
 
