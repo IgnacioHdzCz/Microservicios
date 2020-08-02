@@ -43,6 +43,8 @@ el DAO del Controlador.
 agregamos la anotacion @Service, @Transactional(readOnly=true)
 ![Captura12](https://user-images.githubusercontent.com/41167366/89134882-56b18180-d4ee-11ea-98c9-31610c144cab.PNG)
 
-11.- Inyectar la interfaz del tipo IProductoDao.
+11.- Inyectar la interfaz del tipo ProductoDAO, esta clase debe tener las siguientes configuraciones
+
+![Captura13](https://user-images.githubusercontent.com/41167366/89135115-bf99f900-d4f0-11ea-8a4d-e4f45b6b61d8.PNG)
 
 
