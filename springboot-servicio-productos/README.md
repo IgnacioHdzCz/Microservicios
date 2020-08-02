@@ -16,5 +16,6 @@ Se crea la clase producto  y se agregan los siguientes atributos
 private Long id; private String nombre; private Double precio; @Column(name="create-at")
 ![Captura4](https://user-images.githubusercontent.com/41167366/89091108-8a649e00-d36c-11ea-9f33-c87251a7c6c9.PNG)
 
+5.- Creamos un paquete que contendra la clase repositorio com.microservicios.springboot.app.productos.models.dao
 
 
