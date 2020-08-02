@@ -16,6 +16,33 @@ Se crea la clase producto  y se agregan los siguientes atributos
 private Long id; private String nombre; private Double precio; @Column(name="create-at")
 ![Captura4](https://user-images.githubusercontent.com/41167366/89091108-8a649e00-d36c-11ea-9f33-c87251a7c6c9.PNG)
 
-5.- Creamos un paquete que contendra la clase repositorio com.microservicios.springboot.app.productos.models.dao
+5.- Creamos un paquete que contendra la interfaz del repositorio com.microservicios.springboot.app.productos.models.dao
+
+![Captura6](https://user-images.githubusercontent.com/41167366/89134400-82cb0380-d4ea-11ea-9ed0-e9d37c75c46a.PNG)
+
+
+6.- Creamos la interfaz ProductoDAO
+![Captura7](https://user-images.githubusercontent.com/41167366/89134440-e5bc9a80-d4ea-11ea-8322-6644d795a4ed.PNG)
+
+7.- Esta interfaz va extender de CRUDREPOSITORY e utiliza genericos declaramos el primer tipo que es Producto y el ID. Se esta creando un repositorio apartir de la
+clase entity que es producto
+CrudRepository ya tiene varios metodos que nos permiten tener la funcionalidad de un CRUD.
+Con esta configuracion ya se puede utilizar ProductoDao directamente pero por buenas practicas se recomienda implementar una clase SERVICE, es una fachada para desacoplar
+el DAO del Controlador.
+
+
+8.- Vamos a crear el servicio, renombramos un paquete con el siguiente nombre com.microservicios.springboot.app.productos.models.service
+![Captura9](https://user-images.githubusercontent.com/41167366/89134751-3fbe5f80-d4ed-11ea-9524-885f0c048510.PNG)
+
+9.- Creamos una clase que va implementar esa interfaz ProductoServiceImpl.
+
+![Captura10](https://user-images.githubusercontent.com/41167366/89134812-b2c7d600-d4ed-11ea-88b2-f16fcc1cc757.PNG)
+
+
+10.- Las configuraciones para esta implementaciones son las siguientes
+agregamos la anotacion @Service, @Transactional(readOnly=true)
+![Captura12](https://user-images.githubusercontent.com/41167366/89134882-56b18180-d4ee-11ea-98c9-31610c144cab.PNG)
+
+11.- Inyectar la interfaz del tipo IProductoDao.
 
 
