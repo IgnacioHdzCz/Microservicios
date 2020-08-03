@@ -29,6 +29,7 @@ clase entity que es producto
 CrudRepository ya tiene varios metodos que nos permiten tener la funcionalidad de un CRUD.
 Con esta configuracion ya se puede utilizar ProductoDao directamente pero por buenas practicas se recomienda implementar una clase SERVICE, es una fachada para desacoplar
 el DAO del Controlador.
+![Captura5](https://user-images.githubusercontent.com/41167366/89135411-fe30b300-d4f2-11ea-8f15-ae82260fb594.PNG)
 
 
 8.- Vamos a crear el servicio, renombramos un paquete con el siguiente nombre com.microservicios.springboot.app.productos.models.service
