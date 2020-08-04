@@ -48,4 +48,21 @@ agregamos la anotacion @Service, @Transactional(readOnly=true)
 
 ![Captura13](https://user-images.githubusercontent.com/41167366/89135115-bf99f900-d4f0-11ea-8a4d-e4f45b6b61d8.PNG)
 
+12.- Vamos a crear la clase Controller que va estar en el siguiente paquete
+
+![Captura14](https://user-images.githubusercontent.com/41167366/89240083-a6607d80-d5c0-11ea-88ff-4afe9c02978f.PNG)
+
+
+13.- Lo primero que se debe hacer es anotar la clase con la anotacion @Controller, los MS trabajan con API REST ah si que es necesario agregar esta anotacion
+
+Esa anotacion lo que hace es convertir a JSON lo que retornan los metodos Handler, un metodo
+handler que este mapeado a la URI, Los metodos listar() son los que nos van a regresar
+una lista de productos, al momento de que en la uri venga la ruta absulta
+ruta/listar
+Para hacer esto mas dinamico podemos agregar al @GetMapping un parametro que vamos a tomar
+como variable para ir a buscar a la BD
+El metodo detalle recibe como parametro en la uri un id y con @PathVariable
+podemos obtener ese id.
+![Captura16](https://user-images.githubusercontent.com/41167366/89243351-5a660680-d5c9-11ea-8fb3-6c20703c7efe.PNG)
+![Captura17](https://user-images.githubusercontent.com/41167366/89243353-5b973380-d5c9-11ea-8df5-0325dbacb687.PNG)
 
