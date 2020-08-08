@@ -66,3 +66,28 @@ podemos obtener ese id.
 ![Captura16](https://user-images.githubusercontent.com/41167366/89243351-5a660680-d5c9-11ea-8fb3-6c20703c7efe.PNG)
 ![Captura17](https://user-images.githubusercontent.com/41167366/89243353-5b973380-d5c9-11ea-8df5-0325dbacb687.PNG)
 
+
+14 .- Probar API productos con POSTMAN
+Vamos a crear un archivo que va contener las sentencias SQL, es importante el nombre del archivo debe llamarse import.sql.
+Ah si queda en la estructura de las carpetas
+![Captura18](https://user-images.githubusercontent.com/41167366/89715677-f8acf000-d96c-11ea-9efd-eeaf32a5829f.PNG)
+
+15.- Levantamos el servicio y verificamos que en los logs se haya ejecutado una sentencia SQL.
+
+![Captura19](https://user-images.githubusercontent.com/41167366/89715744-81c42700-d96d-11ea-81cc-10a241408c00.PNG)
+
+Ingresamos a la siguiente ruta localhost:8010/listar para visualizar los datos.
+![Captura20](https://user-images.githubusercontent.com/41167366/89715817-352d1b80-d96e-11ea-9d34-3ae3e8ac8827.PNG)
+
+Para visualizar los datos por ID
+![image](https://user-images.githubusercontent.com/41167366/89715964-18451800-d96f-11ea-83ff-c3a0136457e3.png)
+
+Verificando en Postman
+Listar datos
+![Captura21](https://user-images.githubusercontent.com/41167366/89715897-a967bf00-d96e-11ea-801f-b02c38735fdd.PNG)
+Por Id
+![Captura23](https://user-images.githubusercontent.com/41167366/89715983-3e6ab800-d96f-11ea-8abc-31d2920a391f.PNG)
+
+
+
+
