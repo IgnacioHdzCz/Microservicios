@@ -88,6 +88,60 @@ Listar datos
 Por Id
 ![Captura23](https://user-images.githubusercontent.com/41167366/89715983-3e6ab800-d96f-11ea-8abc-31d2920a391f.PNG)
 
+*****************************************
+Usando cliente REST Feign para consumir la API productos
+
+Libreria Feign forma de implememtar cliet HTTP, 
+Agregar la libreria cloud rounting --> Feign--> Spring Cloud 
+Anotar la clase public class SpringbootServicioItemApplication con la anotacion
+@EnableFeignClients
+Despues de agregar esa anotacion, creamos un paquete y ponemos una intefaz con las siguientes configuraciones
+
+
+![Captura42](https://user-images.githubusercontent.com/41167366/90838857-9ca67c00-e31b-11ea-9955-cd1e29ed16a7.PNG)
+
+![Captura43](https://user-images.githubusercontent.com/41167366/90839198-7f25e200-e31c-11ea-8950-195b576a644a.PNG)
+
+
+![Captura44](https://user-images.githubusercontent.com/41167366/90839869-2bb49380-e31e-11ea-9e1f-3f65777c5b3d.PNG)
 
 
 
+![Captura45](https://user-images.githubusercontent.com/41167366/90841088-5fdd8380-e321-11ea-9d29-7b9317cf1f28.PNG)
+
+![Captura46](https://user-images.githubusercontent.com/41167366/90841138-800d4280-e321-11ea-8159-cc9207e03aac.PNG)
+
+
+// Agregamos la siguiente dependencia de ribbon
+	<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-ribbon -->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+    <version>2.2.3.RELEASE</version>
+</dependency>
+
+Y configuramos la interfaz ProductoClienteRest quedano de la siguiente forma
+
+
+
+
+![Captura47](https://user-images.githubusercontent.com/41167366/90841291-e98d5100-e321-11ea-8ab9-98f21b5c319a.PNG)
+
+Servicios Productos debe tener mas de una instancia desplegada en diferentes puertos
+y con el balanceador de cargas Ribbon seleccionar la mejor.
+
+
+Vamos a desacoplar las configuraciones que tenemos en la clase
+empezando
+
+![Captura48](https://user-images.githubusercontent.com/41167366/90844174-ed70a180-e328-11ea-9a2e-b2a44d9901c7.PNG)
+![Captura49](https://user-images.githubusercontent.com/41167366/90844223-0b3e0680-e329-11ea-9c4d-139451246482.PNG)
+![Captura50](https://user-images.githubusercontent.com/41167366/90844311-3cb6d200-e329-11ea-898b-dad6dc28c838.PNG)
+
+Para arrancar dos instancias en diferentes puertos hacemos lo siguiente
+
+
+![Captura51](https://user-images.githubusercontent.com/41167366/90844822-69b7b480-e32a-11ea-9148-9b26e75a52ce.PNG)
+![Captura52](https://user-images.githubusercontent.com/41167366/90844828-6c1a0e80-e32a-11ea-8d80-3486ef4c7bec.PNG)
+
+Para levantar las dos instancias en la segunda no ponemos nada de ningun puerto
