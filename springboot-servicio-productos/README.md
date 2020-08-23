@@ -145,3 +145,41 @@ Para arrancar dos instancias en diferentes puertos hacemos lo siguiente
 ![Captura52](https://user-images.githubusercontent.com/41167366/90844828-6c1a0e80-e32a-11ea-8d80-3486ef4c7bec.PNG)
 
 Para levantar las dos instancias en la segunda no ponemos nada de ningun puerto
+
+***************Verificar que puerto se esta usando en el balanceador de 
+cargas
+
+Para visualizar que puerto se esta ocupando como manera informativa
+vamos al paquete entity y en la clase producto agregamos un atributo
+llamado port y generamos sus setters y getters
+
+![Captura53](https://user-images.githubusercontent.com/41167366/90981746-5ffba000-e528-11ea-8e97-c384b854fe6c.PNG)
+
+Hacemos lo mismo para el microservicio .servicio-item
+![Captura54](https://user-images.githubusercontent.com/41167366/90981729-54a87480-e528-11ea-9b18-83a3da04c0be.PNG)
+
+Dentro del microservicio servicio-producto nos vamos a la clase controller
+Y hacemos las siguientes modficaciones Inyectamos Environment
+para acceder al valor del puerto en el archivo properties
+
+
+
+![Captura55](https://user-images.githubusercontent.com/41167366/90982050-452a2b00-e52a-11ea-8482-6e7c0470d72b.PNG)
+
+****************Para acceder al valor del server port desde el properties 
+
+![Captura56](https://user-images.githubusercontent.com/41167366/90982846-b6b8a800-e52f-11ea-93bd-0a0890d63ce7.PNG)
+
+***Utilizando Ribbon para el balanceo de  carga en RestTemplate
+
+Nos vamos al MS -Productos y en la clase Controller y en evez de inyectar
+env utilizamos @Value("${server.port}")
+![Captura57](https://user-images.githubusercontent.com/41167366/90987754-e927cc80-e552-11ea-9adb-41756b63f2ca.PNG)
+
+
+***********************Ahora nos vamos al otro MS 
+
+Y en la clase AppConfig agregamos la anotacion LoadBalanced y para que funcione
+nos vamos a models.service
+
+![Captura58](https://user-images.githubusercontent.com/41167366/90988078-91d72b80-e555-11ea-8ec0-0115c2c62e37.PNG)
