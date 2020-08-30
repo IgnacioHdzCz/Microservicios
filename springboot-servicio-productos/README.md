@@ -183,3 +183,34 @@ Y en la clase AppConfig agregamos la anotacion LoadBalanced y para que funcione
 nos vamos a models.service
 
 ![Captura58](https://user-images.githubusercontent.com/41167366/90988078-91d72b80-e555-11ea-8ec0-0115c2c62e37.PNG)
+
+
+*******************************Ahora vamos a configurar Eureka
+
+Para esto creamos un nuevo proyecto
+2.- Vamos al archivo configuration.properties.
+3.- Agregamos una dependencia en el POM, es la siguiente
+<dependency>
+<groupId>org.glassfish.jaxb</groupId>
+<artifactId>jaxb-runtime</artifactId>
+</dependency>
+
+Si la queremos descargar desde la pàgina oficial de spring, vamos a project-> spring-cloud, se elije una version estable
+
+*********************Se deben registrar los clientes en eureka
+
+Configurar item y productos como clientes en eureka
+agregamos eureka discovery
+En spring-starter
+Agregamos 	<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>
+				spring-cloud-starter-netflix-eureka-client
+			</artifactId>
+		</dependency>
+	</dependencies>
+	
+	
+No es necesario agregar la siguiente anotacion en la clase principal de item y productos ya que con la dependencia que se agrego en el POM es suficiente
+pero se agrega @EnableEurekaClient
+	
